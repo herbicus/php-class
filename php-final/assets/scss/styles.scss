@@ -1,0 +1,61 @@
+// IMPORT NORMALIZE AND ANIMATE
+@import "animate";
+@import "normalize";
+
+// IMPORT BOURBON
+@import "bourbon/bourbon";
+@import "bitters/base";
+@import "neat/neat";
+
+// -------------------------------------
+//   Core
+// -------------------------------------
+
+// ----- Settings - @Font-Face Declarations, Variables ----- //
+@import "settings";
+
+// ----- Utilities - Extends, Functions, and Mixins ----- //
+@import "utilities";
+
+// ----- Base - Base-level tags (body, p, etc.) ----- //
+@import "base";
+
+// ----- Typography - Fonts and Colors ----- //
+@import "typography";
+
+// ----- Layout - Margin, Padding, Sizing ----- //
+@import "layout";
+
+// -------------------------------------
+//   Project Specific Styles
+// -------------------------------------
+
+@import "login";
+@import "register";
+@import "user";
+
+// -------------------------------------
+//   Inbox
+// -------------------------------------
+// ----- The inbox allows developers, and those not actively working on the CSS,
+// to quickly add styles that are easily seen by the maintainer of the file.
+// -------------------------------------
+
+hr {
+	clear: both;
+	color: $navy;
+	background: $navy; 
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0;
+	margin-bottom: 0;
+	
+}
+
+// -------------------------------------
+//   Shame
+// -------------------------------------
+// ----- Need to add a quick fix, hack, or questionable technique?
+// ----- Add it here, fix it later.
+// -------------------------------------

@@ -1,0 +1,264 @@
+// -------------------------------------
+//   Layout
+// -------------------------------------
+// ----- Global layout classes (margin, padding, floats, etc).
+// -------------------------------------
+
+*,
+*:before,
+*:after  {
+  -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+           box-sizing: border-box; 
+}
+
+@font-face {
+    font-family: 'gotham';
+    src: url('../fonts/gothambold1.eot');
+    src: url('../fonts/gothambold1.ttf') format('embedded-opentype'),
+         url('../fonts/gothambold1.woff') format('woff'),
+         url('../fonts/gothambold1.ttf') format('truetype'),
+         url('../fonts/gothambold1.svg#sociconregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+html,
+body {
+ font-size: 100%;
+ font-family: 'gotham';
+}
+
+a, h1, h2, h3, p {
+	font-family: 'gotham';
+}
+
+hr {
+	clear: both;
+	color: $navy;
+	background: $navy; 
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0;
+	margin-bottom: 0;
+	
+}
+
+body, html {
+	width: 100%;
+	height: 100%;
+	min-height: 480px;
+	background: $cream;
+	margin: 0;
+	padding: 0;
+	//background: url("../img/bg.png")no-repeat top center;
+	-webkit-background-size: cover; 
+	-o-background-size: cover; 
+	background-size: cover; 
+}
+
+header {
+	//border-bottom: 2px solid $navy;
+	margin-top: 1em;
+	background: rgba(109, 102, 120, 0.5);
+	h1 {
+		padding-left: 1%;
+	}
+}
+
+nav {
+	float: right;
+	padding-top: 20px;
+	ul {
+		width: 100%;
+		li {
+			display: inline;
+			padding: 0 10px;
+			a {
+				color: $navy;
+				@include transition(all .3s ease-in-out);
+				&:hover {
+					color: darken($deepRed, 15%);
+				}
+			}
+		}
+	}
+}
+
+.content-wrap {
+	width: 100%;
+	height: 100%;
+	min-height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	@include row();
+	@include pad(0 10px);
+	@include outer-container;
+	@include mq(iphone) {
+		max-width: 320px;
+	}
+	@include mq(android) {
+		max-width: 480px;
+	}
+	@include mq(tablet) {
+		max-width: 768px;
+	}
+	@include mq(laptop) {
+		max-width: 960px;
+	}
+	@include mq(desktop) {
+		max-width: 1280px;
+	}
+}
+
+// ALTERNATE RESPONSIVE GRID
+.l-row { 
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0;
+	margin-bottom: 0;
+	max-width: 62.5rem; //960px
+	*zoom: 1;
+	padding: 1em 0;
+	@include row();
+	@include outer-container;
+	@include mq(iphone) {
+		max-width: 320px;
+	}
+	@include mq(android) {
+		max-width: 480px;
+	}
+	@include mq(tablet) {
+		max-width: 768px;
+	}
+	@include mq(laptop) {
+		max-width: 960px;
+	}
+}
+
+.full-width {
+	@include span-columns(12);
+	@include media(min-width 320px max-width 768px, 6) {
+    	@include span-columns(6);
+    	margin-top: 1em;
+ 	}
+ }
+
+.two-col { 
+	@include span-columns(6);
+	@include media(min-width 320px max-width 768px, 6) {
+    	@include span-columns(6);
+    	margin-top: 1em;
+	}
+}
+
+.three-col { 
+	@include span-columns(4);
+	@include media(min-width 320px max-width 768px, 6) {
+    	@include span-columns(6);
+    	margin-top: 1em;
+	}
+}
+
+.four-col { 
+	@include span-columns(3);
+	@include media(min-width 320px max-width 480px, 6) {
+    	@include span-columns(6);
+    	margin-top: 1em;
+  }
+}
+
+.six-col { 
+	@include span-columns(2);
+	@include media(min-width 320px max-width 480px, 6) {
+    	@include span-columns(6);
+    	margin-top: 1em;
+	}
+}
+
+.twelve-col { 
+	@include span-columns(1);
+	@include media(min-width 320px max-width 480px, 6) {
+	    @include span-columns(6);
+	    margin-top: 1em;
+	}
+}
+
+.sidebar {
+	@include span-columns(4);
+	background: rgba(190, 217, 158, 0.5);
+	float: left;
+	min-height: 480px;
+	p {
+		padding-left: 3%;
+		padding-top: 430px;
+	}
+	.user-text {
+		padding-left: 3% !important;
+		text-align: left !important;
+		display: block !important;
+		vertical-align: middle !important;
+		width: 100% !important;
+		font-size: 2em;
+	}
+	.profile-pic {
+		// width: 70px;
+		// height: 100%;
+		width: 100%;
+		height: 0 auto;
+		display: table-cell;
+		vertical-align: middle;
+		@include pad(10px 10px);
+		@include box-sizing(border-box);
+		img {
+			width: 150px;
+			height: 150px;
+		}
+	}
+
+	@include media(min-width 320px max-width 480px, 6) {
+    	display: none;
+ 	}
+}
+
+.main-container {
+	@include span-columns(8);
+	background: rgba(227, 161, 143, 0.5);
+	float: left;
+	min-height: 100vh;
+	@include media(min-width 320px max-width 480px, 6) {
+    	@include span-columns(6);
+ 	}
+}
+
+.divider {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 0;
+	max-width: 62.5rem; //960px
+	height: 2px;
+	background: $navy; 
+	*zoom: 1;
+	//padding: 0 1%;
+	@include row();
+	@include outer-container;
+	@include mq(iphone) {
+		max-width: 320px;
+	}
+	@include mq(android) {
+		max-width: 480px;
+	}
+	@include mq(tablet) {
+		max-width: 768px;
+	}
+	@include mq(laptop) {
+		max-width: 960px;
+	}
+}
+

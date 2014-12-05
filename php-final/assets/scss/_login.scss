@@ -1,0 +1,82 @@
+.form-container {
+	margin-top: 1em;
+	form {
+		background: rgba(190, 217, 158, 0.5);
+		width: 100%;
+		height: auto;
+		border: 1px solid $charcoal;
+		@include pad(10px 10px);
+		@include box-sizing(border-box);
+		input[type="text"], input[type="password"]{
+			background: rgba(109, 102, 120, 0.5);
+		}
+		input[type="submit"] {
+			margin-left: 1%;
+		}
+		div {
+			float: right;
+			height: 40px;
+			@include box-sizing(border-box);
+			display: table;
+			a {
+				display: table-cell;
+				vertical-align: middle;
+				color: $navy;
+				@include transition(all .3s ease-in-out);
+				&:hover {
+					color: darken($deepRed, 15%);
+				}
+			}
+		}
+		@include mq(iphone) {
+			position: relative;
+			left: 50%;
+			width: 320px;
+			margin-left: -160px;
+		}
+	}
+}
+
+// INPUTS
+input[type="text"], input[type="password"], input[type="submit"], textarea {
+	background: transparent;
+	outline: none;
+	border: none;
+	box-shadow: none;
+	@include placeholder {
+    color: $cream;
+  }
+	&:focus {
+		box-shadow: none;
+		color: $cream;
+	}
+}
+input[type="submit"] {
+	margin-left: 4%;
+	background: $navy;
+	@include transition(all .3s ease-in-out);
+	&:hover {
+		background: $muteNavy;
+		@include shadow-border($deepRed);
+	}
+}
+
+textarea {
+	background: rgba($cream, .5);
+	//background: rgba(109, 102, 120, 0.5);
+	width: 96%;
+	margin: 10px 2%;
+	@include placeholder {
+    color: $navy;
+	}	
+	&:focus {
+		box-shadow: none;
+		color: $navy;
+	}
+}
+
+// WEBKIT AUTOFILL
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0px 1000px $charcoal inset !important;
+	-webkit-text-fill-color: $cream!important;
+}
