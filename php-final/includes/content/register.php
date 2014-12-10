@@ -5,7 +5,7 @@
 		<nav>
 			<ul>
 				<li><a href="index.php">Home</a></li>
-				<li><a href="index.php?page=users">Users</a></li>
+				<!-- <li><a href="index.php?page=users">Users</a></li> -->
 				<li><a href="index.php?page=logout">Log Out</a></li>
 			</ul>
 		</nav>
@@ -26,7 +26,7 @@
 		<select name="image" placeholder="Choose An Avatar" class="pull-right"><br>
 		  <option value="http://placekitten.com/g/200/200">Cat 1</option>
 		  <option value="http://placekitten.com/g/300/300">Cat 2</option>
-		  <option value="http://placekitten.com/g/400/400">Cat 3</option>
+		  <option value="http://placekitten.com/g/600/600">Cat 3</option>
 		  <option value="http://placekitten.com/g/500/500">Cat 4</option>
 		</select>
 		<input type="submit" value="Submit">

@@ -6,7 +6,7 @@
 
 <header class="l-row">
 	<div class="full-width">
-		<h1>herb-book</h1>
+		<h1>herbbook</h1>
 		<nav>
 			<ul>
 				<?php  
