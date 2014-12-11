@@ -42,7 +42,6 @@ if ($result = $link -> query($emailSQL)) {
 	if ($result -> num_rows >= 1) {
 		echo "That email already exists.";
 	} else {
-		// SQL LOGIC (if errors out, page will die)
 		$sql = " INSERT INTO users (name, last_name, image, email, password) VALUES ('$name', '$last_name', '$image', '$email', '$password') ";
 
 		if ($link -> query($sql) === false) {
@@ -53,8 +52,9 @@ if ($result = $link -> query($emailSQL)) {
 		}
 		//echo "The user inserted was user ID: " . $last_inserted_id;
 		echo "<div class='l-row'><div class='full-width'><h1>Welcome To herbbook</h1></div></div>";
+		echo "<div class='l-row'><div class='full-width'><h3>Please Login</h3></div></div>";
 		echo "<script>setTimeout(function(){window.location.href='index.php?page=home'}, 1500);</script>";
-		echo '<button class="text-center">Lets Begin</button>';
+		// echo '<button class="text-center">Lets Begin</button>';
 	}
 } else {
 	// ERROR

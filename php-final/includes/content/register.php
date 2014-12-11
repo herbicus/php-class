@@ -18,7 +18,6 @@
 		
 		<input type="text" name="name" placeholder="First Name"><br/>
 		<input type="text" name="last-name" placeholder="Last Name"><br/>
-		<!-- <input type="text" name="image" placeholder="Avatar url"><br/> -->
 		<input type="text" name="email" placeholder="E-mail"><br/>
 		<input type="password" name="password" placeholder="Password"><br/>
 		<p class="pull-left">Choose An Avatar</p>
@@ -33,7 +32,6 @@
 		<?php
 
 		if(!$_SESSION['logged_in']) {
-			// If the user is logged in, do not show register
 			echo '<div>';
 			echo '<a href="index.php">Login</a>';
 			echo '<div>';

@@ -7,7 +7,6 @@ if ($_SESSION['logged_in']) {
 
 ?>
 
-
 <header class="l-row">
 	<div class="full-width">
 		<h1>herbbook</h1>
@@ -39,7 +38,7 @@ if ($_SESSION['logged_in']) {
 	<section class="main-container clearfix">
 
 	<?php
-	
+
 	$sql = "SELECT * FROM  users";
 
 	$results = $link -> query($sql);

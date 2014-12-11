@@ -3,8 +3,6 @@
 $email = (isset($_POST['email'])) ? $_POST['email'] : "";
 $password = (isset($_POST['password'])) ? md5($_POST['password']) : "";
 
-// SQL LOGIC TO CHECK EMAILS
-
 $emailSQL = "SELECT * FROM users WHERE email = '$email'";
 
 $results = $link -> query($emailSQL);
@@ -28,7 +26,6 @@ if ($rows >= 1 ) {
 		}
 	}
 } else {
-	// EMAIL NOT FOUND IN DATABASE, DISPLAY ERROR
 	echo '<div class="l-row">';
 		echo '<div class="full-width center-text"><h1>Sorry, that email is not registered</h1><br/>';
 		echo '<h2><a href="index.php">Try Again</a>' . ' | ' . '<a href="index.php?page=register">Register</a></h2></div>';
