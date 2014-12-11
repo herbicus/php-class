@@ -262,3 +262,24 @@ nav {
 	}
 }
 
+.l-error-callout {
+	@include fade-callout(0.5, $cream, $charcoal);
+	@include centerer;
+	opacity: 0;
+	display: none;
+	padding: 3%;
+	p {
+		padding: 1%;
+		color: $cream;
+		font-size: 1em;
+	}
+	button {
+		background: $navy;
+		@include transition(all .3s ease-in-out);
+		&:hover {
+			background: $muteNavy;
+			@include shadow-border($deepRed);
+		}
+	}
+}
+

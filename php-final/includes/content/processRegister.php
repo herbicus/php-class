@@ -1,7 +1,5 @@
 <?php
 
-// echo "<pre>";
-// print_r($_POST);
 $name = (isset($_POST['name'])) ? $_POST['name'] : "";
 $last_name = (isset($_POST['last-name'])) ? $_POST['last-name'] : "";
 $image = (isset($_POST['image'])) ? $_POST['image'] : "";
@@ -12,6 +10,13 @@ $password = (isset($_POST['password'])) ? md5($_POST['password']) : "";
 // ERROR HANDLING
 if ($name === "") {
 	die("You must enter your first name!");
+	// echo '<script>
+	// 		TweenMax.to(".l-error-callout" , 0.25, {
+	// 			autoAlpha: 1,
+	// 			display: "block",
+	// 			ease: Back.easeInOut
+	// 		});
+	// 	</script>';
 }
 
 if ($last_name === "") {
@@ -46,8 +51,10 @@ if ($result = $link -> query($emailSQL)) {
 			$last_inserted_id = $link -> insert_id;
 			$affected_rows = $link -> affected_rows;
 		}
-		echo "The user inserted was user ID: " . $last_inserted_id;
-		echo "<script>setTimeout(function(){window.location.href='index.php?page=home'}, 2500);</script>";
+		//echo "The user inserted was user ID: " . $last_inserted_id;
+		echo "<div class='l-row'><div class='full-width'><h1>Welcome To herbbook</h1></div></div>";
+		echo "<script>setTimeout(function(){window.location.href='index.php?page=home'}, 1500);</script>";
+		echo '<button class="text-center">Lets Begin</button>';
 	}
 } else {
 	// ERROR

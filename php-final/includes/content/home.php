@@ -9,8 +9,6 @@
 		<h1>herbbook</h1>
 		<nav>
 			<ul>
-				<?php  
-				//echo '<li>' . '<img class="nav-pic" src="' . $_SESSION['profile_pic'] . '" alt="avatar"/>' . '</li>';?>
 				<li><img src=" <?php  echo $_SESSION['profile_pic'] ?>" alt="" class="nav-pic"></li>
 				<li><a href="index.php">Home</a></li>
 				<li><a href="index.php?page=users">Users</a></li>
@@ -37,8 +35,8 @@
 	<section class="main-container clearfix">
 
 	<?php
-	include('comments.php');
-					include('all_comments.php');
+		include('comments.php');
+		include('all_comments.php');
 
 	} else {
 		include('login.php');

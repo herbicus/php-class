@@ -1,5 +1,6 @@
 <div class="l-row">
-	<div class="full-width">
-		<h1>I don't know what your looking for but it's not here!</h1>
+	<div class="full-width text-center">
+		<h1>404</h1>
+		<h6>The resources you are looking for are not on this server</h6>
 	</div>
 </div>

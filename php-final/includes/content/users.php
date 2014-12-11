@@ -13,8 +13,6 @@ if ($_SESSION['logged_in']) {
 		<h1>herbbook</h1>
 		<nav>
 			<ul>
-				<?php  
-				//echo '<li>' . '<img class="nav-pic" src="' . $_SESSION['profile_pic'] . '" alt="avatar"/>' . '</li>';?>
 				<li><img src=" <?php  echo $_SESSION['profile_pic'] ?>" alt="" class="nav-pic"></li>
 				<li><a href="index.php">Home</a></li>
 				<li><a href="index.php?page=users">Users</a></li>
@@ -41,9 +39,9 @@ if ($_SESSION['logged_in']) {
 	<section class="main-container clearfix">
 
 	<?php
+	
 	$sql = "SELECT * FROM  users";
 
-	// $results = mysqli_query($link, $sqlQuery);
 	$results = $link -> query($sql);
 	$rows = $results -> num_rows;
 
@@ -57,7 +55,8 @@ if ($_SESSION['logged_in']) {
 	} else {
 		include('login.php');
 	}
-		?>
+
+	?>
 
 	</section>
 </section>

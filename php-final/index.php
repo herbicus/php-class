@@ -9,7 +9,7 @@
 
 	<section>
 		<?php 
-		$filename = 'includes/content/'; // . page . '.php'
+		$filename = 'includes/content/';
 		$error_page = $filename . '404.php';
 		$home_page = $filename . 'home.php';
 
@@ -28,6 +28,11 @@
 		}
 
 		include($page); ?>
+<!-- 		<div class="l-error-callout">
+			<p>There Was An Error</p><br>
+			<p>Perhaps You Miss Something</p>
+			<button class="pull-right">Back</button>
+		</div> -->
 	</section>
 
 

@@ -4,7 +4,6 @@
 		<nav>
 			<ul>
 				<li><a href="index.php">Home</a></li>
-				<!-- <li><a href="index.php?page=users">Users</a></li> -->
 				<li><a href="index.php?page=logout">Log Out</a></li>
 			</ul>
 		</nav>
@@ -20,7 +19,6 @@
 		<?php
 
 		if(!$_SESSION['logged_in']) {
-			// If the user is logged in, do not show register
 			echo '<div>';
 			echo '<a href="index.php?page=register">Register</a>';
 			echo '</div>';
